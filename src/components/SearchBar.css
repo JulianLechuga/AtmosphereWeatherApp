@@ -1,0 +1,112 @@
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  z-index: 50;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  transition: var(--transition-normal);
+}
+
+.search-input-wrapper:focus-within {
+  box-shadow: 0 0 0 2px var(--accent-color), var(--glass-shadow);
+  background: rgba(30, 30, 35, 0.6);
+}
+
+.search-icon {
+  color: var(--text-secondary);
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.search-loader {
+  color: var(--accent-color);
+  animation: spin 1s linear infinite;
+  margin-left: 0.75rem;
+}
+
+.search-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  right: 0;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: rgba(15, 15, 20, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.8);
+  z-index: 100;
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 16px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  text-align: left;
+  font-family: inherit;
+}
+
+.search-result-item:hover,
+.search-result-item:focus {
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+}
+
+.item-icon {
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+.search-result-item:hover .item-icon {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.item-name {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.item-region {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
